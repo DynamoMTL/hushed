@@ -32,7 +32,7 @@ module Gentle
                       'TrackingNumber' => @rma.tracking_number) do
 
                 @rma.returned_items.each do |returned_item|
-                  xml.Line('LineNo'          => returned_item.line_item_id,
+                  xml.Line('LineNo'          => returned_item.id,
                            'OrderNumber'     => @order.number,
                            'ItemNumber'      => returned_item.sku,
                            'Quantity'        => returned_item.quantity,
